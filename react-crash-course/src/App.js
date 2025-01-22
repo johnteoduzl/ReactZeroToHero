@@ -6,7 +6,7 @@ function ProductCard()
   return(
     <article>
       <h2>iPhone 15 pro</h2>
-      <img src="images/iphone.png"
+      <img src="images/apple.png"
             alt="iPhone 15 Pro"
             width="128px"
             height="128px"
