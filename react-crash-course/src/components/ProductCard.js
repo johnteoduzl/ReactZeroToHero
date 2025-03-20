@@ -5,6 +5,10 @@ export function ProductCard(props, background = 'slategrey', ...restProps) {
     return produ.title;//props.product.title;
   }
 
+function handleClick(product)
+{
+alert(`You clicked on ${getProductTitle()} which cost ${props.product.price}`);
+}
 
   return (
     <article style={{ width: '100%', border: '3px solid white', borderRadius: '9px', padding: '16px', textAlign: 'center' }}>
@@ -22,7 +26,7 @@ export function ProductCard(props, background = 'slategrey', ...restProps) {
         <li>{props.product.specification[1]}</li>
         <li>{props.product.specification[2]}</li>
       </ul>
-      <button>Buy (From ${props.product.price})</button>
+      <button onClick={()=>handleClick(props.product)}>Buy (From ${props.product.price})</button>
     </article>
   );
 }
