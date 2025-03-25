@@ -36,11 +36,19 @@ function App() {
     <div className="App">
       React Crash Course
       <ProductList>
-      <ProductCard width='96px' height = '96px' background='peru' product={product[0]}/>
-      <ProductCard width='64px' height = '64px' product={product[1]}/>
-      <ProductCard width='128px' height = '128px' background='darkolivegree' product={product[2]}/>
-      </ProductList>
+        {product.map((product) => <ProductCard width='96px' height = '96px' background='peru' key={product.title} product={product}/> )}
+       </ProductList>
       
+      <h2>
+        Product which cost more than $1500
+      </h2>
+      <ul>
+        {product.filter(({price})=> price<1500).map(({title,price}) => (
+        <li>
+          {title} cost ${price}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -22,9 +22,8 @@ alert(`You clicked on ${getProductTitle()} which cost ${props.product.price}`);
 
       <p>Specifications</p>
       <ul style={{ listStle: "none", padding: 0 }}>
-        <li>{props.product.specification[0]}</li>
-        <li>{props.product.specification[1]}</li>
-        <li>{props.product.specification[2]}</li>
+        {props.product.specification.map(({spec,index})=><li>{spec}</li>)}
+       
       </ul>
       <button onClick={()=>handleClick(props.product)}>Buy (From ${props.product.price})</button>
     </article>
